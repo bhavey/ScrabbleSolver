@@ -1,0 +1,86 @@
+/*
+This css is based on the following page:
+http://j4n.co/blog/Creating-your-own-css-grid-system
+I'm not going to do an actual grid system, as that
+is overkill - but I am going to base this on the
+format used in a grid system.
+*/
+
+/* Contains the board and tiles within */
+.board {
+	width: 100%;
+	height: 50%;
+	max-width: 900px;
+	/*center the board*/
+	outline: 2px solid black;
+}
+
+/* Keeps all content inside of a given tile and not overflowing to the next one. */
+.row:before,
+.row:after {
+	content: "";
+	display: table;
+	height: 6.6667%;
+	line-height: 6.6667%;
+	clear: both;
+}
+
+/* Float each tile to keep it positioned correctly. min-height stops stacking of a tile */
+.tile {
+	float: left;
+	min-height: 1px;
+	/* Base tile width is 6.667 (1/15) */
+	width: 6.6667%;
+	height: 6.6667%;
+	background-color: #FF9900;
+	outline: 1px solid gray;
+	display: inline-block;
+	position: relative;
+
+    text-align: center; 
+    color: white; 
+    padding: 0;
+    margin: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    font-weight:bold;
+}
+
+/* Specific tiles */
+/* tile with a piece on it */
+.tile.filled {
+	color: black;
+	font-size: 400%;
+	background-color: #FF9900;
+}
+
+/* Double letter */
+.tile.start {
+	background-color: #FF0066;
+	color:black;
+	font-size: 400%;
+}
+
+/* Double letter */
+.tile.l2 {
+	background-color: #99CCFF;
+	color:black;
+}
+
+/* Triple letter */
+.tile.l3 {
+	background-color: #0066FF;
+}
+
+/* Double word */
+.tile.w2 {
+	background-color: #FF0066;
+}
+
+/* Triple word */
+.tile.w3 {
+	background-color: #FF0000;
+}
+
